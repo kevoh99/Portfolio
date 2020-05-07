@@ -467,7 +467,7 @@ html {
   color: var(--primary-color);
   max-width: 97%;
   margin: auto;
-  padding: 0.5em;
+  padding: 1em 1em 2em 1em;
 }
 
 .portfolio .section-header h1,
