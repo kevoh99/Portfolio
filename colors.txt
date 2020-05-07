@@ -1,0 +1,7 @@
+loomdigital.co.uk
+
+#070721 - Dark blue used as background, as text where main accent is used as bg
+#62FFBC - Main accent color (light greensih)
+#8A2AD1 - other accent color (purplish); links/links:hover state
+#FFFFFF - Text color, where blue is used as bg; button hover state where main accent is bg and dark blue text/btn bg color
+#212139 - Buttons hover state
