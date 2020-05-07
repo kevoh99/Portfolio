@@ -13,7 +13,7 @@
   --secondary-color: #6effc4;
   --tertiary-color: #9630d8;
   --text-color: #fff;
-  --ff-primary: "Baloo Tammudu 2", cursive;
+
   --ff-primary: "Open Sans", sans-serif;
   --ff-secondary: "Raleway", sans-serif;
 
@@ -92,7 +92,6 @@ html {
   max-width: 1100px;
   margin: 2em auto;
   padding: 0.5em 0.7em;
-  /* background: chocolate; */
 }
 
 @media (min-width: 450px) {
@@ -122,7 +121,6 @@ html {
   width: 3em;
   height: 3px;
   background-color: rgba(255, 255, 255, 0.9);
-  /* background: var(--tertiary-color); */
   position: absolute;
   top: 100%;
   left: 50%;
@@ -200,7 +198,9 @@ html {
 ****************** General Styles ******************
 **************************************************/
 
-/* Start header */
+/*************************************
+*********** Start header *************
+*************************************/
 .header {
   background-color: var(--primary-color);
   height: 100vh;
@@ -208,7 +208,6 @@ html {
 
 .nav {
   background-color: var(--primary-color);
-  /* background-color: violet; */
   position: fixed;
   top: 0;
   left: 0;
@@ -217,7 +216,6 @@ html {
 }
 
 .nav-list {
-  /* padding: 2em 3em; */
   padding: 1.5em 0.5em 0.5em;
   display: flex; /* To remove when implementing the hamburger menu */
   justify-content: space-between;
@@ -250,19 +248,17 @@ html {
 
 .landing-pg-wrapper {
   position: absolute;
-  /* background: red; */
-  /* padding: 5em 1em; */
   top: 50%;
   left: 50%;
   transform: translate(
     -50%,
     -50%
-  ); /* To center the content NB: value the same as top and left, but negative values are used */
+  ); /* To center the content NB: value the same as top and left, 
+  but negative values are used and vice versa */
 }
 
 .landing-pg-wrapper-inner {
   position: relative;
-  /* background: yellow; */
   display: grid;
   grid-template-columns: auto 1fr;
   grid-gap: 0 1em;
@@ -288,7 +284,6 @@ html {
 .landing-pg-title {
   padding-left: 2.2em;
   font-size: 1.5rem;
-  /* background: chartreuse; */
 }
 
 .landing-pg-subtitle {
@@ -338,9 +333,86 @@ html {
   }
 }
 
-/* End header */
+/*************************************
+*********** End header ***************
+*************************************/
 
-/* Start services */
+/*************************************
+*********** Start About **************
+*************************************/
+.about {
+  background-color: var(--text-color);
+}
+
+.about h1 {
+  color: var(--primary-color);
+  opacity: 1;
+  font-weight: var(--fw-bolder);
+}
+
+.about-title {
+  grid-area: title;
+}
+
+.about-grid h4 {
+  background: var(--secondary-color);
+  color: var(--primary-color);
+  grid-area: subtitle;
+  padding: 1.5em 1em 1em 1em;
+  border-radius: 3px;
+}
+
+.profile-img {
+  width: 200px;
+  grid-area: img;
+  position: relative;
+  z-index: 3;
+}
+
+.profile-text {
+  color: var(--primary-color);
+  grid-area: text;
+  padding: 0.5em;
+}
+
+.about-grid {
+  max-width: 860px;
+  margin: auto;
+  display: grid;
+  grid-template-areas:
+    "title"
+    "subtitle"
+    "text"
+    "img";
+}
+
+@media (min-width: 650px) {
+  .about-grid {
+    grid-gap: 0.5em;
+    grid-template-rows: 70px auto auto auto;
+    grid-template-areas:
+      "title img"
+      "subtitle img"
+      "text img";
+  }
+
+  .about-grid h4 {
+    position: relative;
+    grid-column: -1/1;
+    left: -1em;
+    width: calc(100% + 3em);
+    padding-left: 3em;
+    padding-right: calc(200px + 2em + 1em);
+  }
+}
+
+/*************************************
+*********** End About ****************
+*************************************/
+
+/*************************************
+*********** Start Services ***********
+*************************************/
 .service-wrapper {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -349,7 +421,6 @@ html {
 
 .service {
   padding: 1em 0.5em;
-  /* background: red; */
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -378,9 +449,86 @@ html {
   font-size: 2rem;
   transform: rotate(-45deg);
 }
-/* End services */
 
-/* Start contact */
+/*************************************
+*********** End Services *************
+*************************************/
+
+/*************************************
+*********** Start Portfolio **********
+*************************************/
+
+.portfolio {
+  background-color: var(--tertiary-color);
+}
+
+.portfolio .container {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  max-width: 97%;
+  margin: auto;
+  padding: 0.5em;
+}
+
+.portfolio .section-header h1,
+.portfolio .section-header h4 {
+  background-color: var(--secondary-color);
+  color: var(--primary-color);
+  opacity: 1;
+}
+
+.portfolio .section-header h1::before,
+.portfolio .section-header h1::after {
+  opacity: 1;
+  background-color: var(--text-color);
+}
+
+.projects-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-gap: 3.5em 1em;
+}
+
+@media (min-width: 550px) {
+  .projects-wrapper {
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-gap: 2em;
+  }
+}
+
+.project-link:focus {
+  outline: 3px solid var(--tertiary-color); /* To override the default color */
+  outline-offset: 0;
+  /* The next two lines make sure the focused-on link (and image) always appears in front, 
+  in case there is no grid gap. Tthis project has got gap, so they are not really necessary */
+  position: relative;
+  z-index: 2;
+}
+.project-tile {
+  color: var(--primary-color);
+}
+
+.project-tile img {
+  transition: transform 750ms cubic-bezier(0.5, 0, 0.5, 1), opacity 250ms linear;
+}
+
+.project-tile:hover img,
+.project-link:focus .project-tile img {
+  transform: scale(1.2);
+  opacity: 0.5;
+}
+
+.project-link {
+  overflow: hidden; /* To make images grow within their box on :hover */
+}
+
+/*************************************
+******** End of Portfolio ************
+*************************************/
+
+/*************************************
+*********** Start Contact ************
+*************************************/
 
 .contact-wrapper {
   padding: 1em 0;
@@ -444,9 +592,14 @@ html {
   margin-top: 1em;
 }
 
-/* End contact */
+/*************************************
+*********** End Contact **************
+*************************************/
 
-/* Start footer */
+/*************************************
+*********** Start Footer *************
+*************************************/
+
 .footer {
   border-top: 4px solid rgba(255, 255, 255, 0.2);
   height: 5em;
@@ -459,7 +612,6 @@ html {
   padding: 2rem 2rem 1rem 2rem;
   margin-bottom: 0;
   margin-top: 0;
-  /* background: red; */
 }
 
 .up {
@@ -478,7 +630,6 @@ html {
 .up:hover {
   animation: pulse 1000ms infinite;
   outline: 0;
-  /* box-shadow: 0 0 0 0.3rem var(--tertiary-color); */
 }
 
 @keyframes pulse {
@@ -502,143 +653,6 @@ html {
   color: var(--primary-color);
 }
 
-/*************Test start - redesign about section ****************
-*****************************************************************/
-.about {
-  background-color: var(--text-color);
-}
-
-.about h1 {
-  color: var(--primary-color);
-  opacity: 1;
-  font-weight: var(--fw-bolder);
-}
-
-.about-title {
-  /* background: purple; */
-  grid-area: title;
-}
-
-.about-grid h4 {
-  background: var(--secondary-color);
-  color: var(--primary-color);
-  grid-area: subtitle;
-  padding: 1.5em 1em 1em 1em;
-  border-radius: 3px;
-}
-
-.profile-img {
-  width: 200px;
-  grid-area: img;
-  position: relative;
-  z-index: 3;
-}
-
-.profile-text {
-  /* background-color: chartreuse; */
-  color: var(--primary-color);
-  grid-area: text;
-  padding: 0.5em;
-}
-
-.about-grid {
-  max-width: 860px;
-  margin: auto;
-  /* background-color: chocolate; */
-  display: grid;
-  grid-template-areas:
-    "title"
-    "subtitle"
-    "text"
-    "img";
-}
-
-@media (min-width: 650px) {
-  .about-grid {
-    grid-gap: 0.5em;
-    grid-template-rows: 70px auto auto auto;
-    grid-template-areas:
-      "title img"
-      "subtitle img"
-      "text img";
-  }
-
-  .about-grid h4 {
-    position: relative;
-    grid-column: -1/1;
-    left: -1em;
-    width: calc(100% + 3em);
-    padding-left: 3em;
-    padding-right: calc(200px + 2em + 1em);
-  }
-}
-/* End of about section */
-
-/* Start portfolio section */
-
-.portfolio {
-  background-color: var(--tertiary-color);
-}
-
-.portfolio .container {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-  max-width: 97%;
-  margin: auto;
-  padding: 0.5em;
-}
-
-.portfolio .section-header h1,
-.portfolio .section-header h4 {
-  background-color: var(--secondary-color);
-  color: var(--primary-color);
-  opacity: 1;
-}
-
-.portfolio .section-header h1::before,
-.portfolio .section-header h1::after {
-  opacity: 1;
-  background-color: var(--text-color);
-}
-
-.projects-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  /* grid-template-rows: repeat(3, 300px); */
-  grid-gap: 3.5em 1em;
-}
-
-@media (min-width: 550px) {
-  .projects-wrapper {
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    grid-gap: 2em;
-  }
-}
-
-/* Image effects test begins */
-.project-link:focus {
-  outline: 3px solid var(--tertiary-color); /* To override the default color */
-  outline-offset: 0;
-  /* The next two lines make sure the focused-on link (and image) always appears in front, 
-  in case there is no grid gap. Tthis project has got gap, so they are not really necessary */
-  position: relative;
-  z-index: 2;
-}
-.project-tile {
-  color: var(--primary-color);
-}
-
-.project-tile img {
-  transition: transform 750ms cubic-bezier(0.5, 0, 0.5, 1), opacity 250ms linear;
-}
-
-.project-tile:hover img,
-.project-link:focus .project-tile img {
-  transform: scale(1.2);
-  opacity: 0.5;
-}
-
-.project-link {
-  overflow: hidden; /* To make images grow within their box on :hover */
-}
-/* Image effects test ends */
+/*************************************
+*********** End Footer ***************
+*************************************/
