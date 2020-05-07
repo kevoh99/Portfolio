@@ -6,8 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha256-l85OmPOjvil/SOvVt3HnSSjzF1TUMyT9eV0c2BzEGzU=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css?family=Baloo+Tammudu+2&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style2.css">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Baloo+Tammudu+2&display=swap" rel="stylesheet"> -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
     <title>Kevin Njoroge - Web Developer | Portfolio</title>
 </head>
 
@@ -34,7 +37,9 @@
                 <div class="spine">&nbsp;</div>
 
                 <div class="landing-pg-title">
-                    <h1>Hi, I am <br> Kevin Njoroge</h1>
+                    <h1>
+                        <span class="regular-text">
+                            Hi, I am </span><br> Kevin Njoroge</h1>
                 </div>
 
                 <div class="landing-pg-subtitle">
@@ -60,7 +65,7 @@
             <!-- Grid container -->
             <div class="about-grid">
                 <div class="about-title">
-                    <h1>WHO I AM</h1>
+                    <h1>Who I Am</h1>
                 </div>
                 <h4>Full-Stack Developer Based in Nairobi</h4>
 
@@ -99,7 +104,7 @@
 
                 <div class="service">
                     <div class="icon-container">
-                        <i class="fas fa-code"></i>
+                        <i class="fas fa-layer-group"></i>
                     </div>
                     <h3 class="service-title">Mobile Apps</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id aliquid, accusamus harum dolorem doloremque dicta iure velit. Reiciendis, doloribus. Omnis, corrupti? Atque, a. Explicabo, corporis assumenda excepturi recusandae soluta sint.</p>
@@ -107,9 +112,9 @@
 
                 <div class="service">
                     <div class="icon-container">
-                        <i class="fas fa-code"></i>
+                        <i class="fas fa-chart-bar"></i>
                     </div>
-                    <h3 class="service-title">Web Development</h3>
+                    <h3 class="service-title">Product Strategy</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id aliquid, accusamus harum dolorem doloremque dicta iure velit. Reiciendis, doloribus. Omnis, corrupti? Atque, a. Explicabo, corporis assumenda excepturi recusandae soluta sint.</p>
                 </div>
             </div>
@@ -127,7 +132,7 @@
 
             <div class="projects-wrapper">
                 <!-- Project  1-->
-                <a href="https://codepen.io/kevin-nganga/details/ZEGgyYb" class="project-link" target="_blank">
+                <a href="https://codepen.io/kevin-nganga/full/ZEGgyYb" class="project-link" target="_blank">
                     <figure class="project-tile">
                         <img src="img/screenshot_2.png" alt="Project 1">
                         <br>
@@ -135,7 +140,7 @@
                     </figure>
                 </a>
                 <!-- Project  2-->
-                <a href="https://codepen.io/kevin-nganga/pen/poJXVbp" class="project-link" target="_blank">
+                <a href="https://codepen.io/kevin-nganga/full/poJXVbp" class="project-link" target="_blank">
                     <figure class="project-tile">
                         <img src="img/screenshot_3.png" alt="Project 1">
                         <br>
@@ -143,7 +148,7 @@
                     </figure>
                 </a>
                 <!-- Project  3-->
-                <a href="https://codepen.io/kevin-nganga/details/XWmKgEV" class="project-link" target="_blank">
+                <a href="https://codepen.io/kevin-nganga/full/XWmKgEV" class="project-link" target="_blank">
                     <figure class="project-tile">
                         <img src="img/screenshot_4.png" alt="Project 1">
                         <br>
@@ -151,7 +156,7 @@
                     </figure>
                 </a>
                 <!-- Project  4-->
-                <a href="https://codepen.io/kevin-nganga/details/GRpmGGg" class="project-link" target="_blank">
+                <a href="https://codepen.io/kevin-nganga/full/GRpmGGg" class="project-link" target="_blank">
                     <figure class="project-tile">
                         <img src="img/screenshot_5.png" alt="Project 1">
                         <br>
@@ -159,7 +164,7 @@
                     </figure>
                 </a>
                 <!-- Project  5 -->
-                <a href="https://codepen.io/kevin-nganga/details/GRpmGGg" class="project-link" target="_blank">
+                <a href="https://codepen.io/kevin-nganga/full/GRpmGGg" class="project-link" target="_blank">
                     <figure class="project-tile">
                         <img src="img/screenshot_1.png" alt="Project 1">
                         <br>
@@ -183,7 +188,7 @@
             <div class="contact-wrapper">
                 <div class="channel form-wrapper">
                     <p class="contact-subtitle">Send an email </p>
-                    <form action="">
+                    <form class="contact-form" action="">
                         <label for="name">Name:</label>
                         <input type="text" name="name" id="name" placeholder="Enter your name..." required>
 
@@ -198,7 +203,7 @@
                         </select>
 
                         <label for="subject">Subject:</label>
-                        <textarea name="subject" id="subject" cols="10" rows="10"></textarea>
+                        <textarea name="subject" id="subject" cols="10" rows="10" placeholder="Message"></textarea>
 
                         <input class="btn-2" type="submit" value="Submit">
                     </form>
