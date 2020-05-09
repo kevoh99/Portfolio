@@ -200,6 +200,10 @@ html {
   height: 100vh;
 }
 
+.header ul {
+  overflow: hidden;
+}
+
 .nav {
   background-color: var(--primary-color);
   position: fixed;
@@ -209,12 +213,12 @@ html {
   z-index: 10;
 }
 
-.nav-list {
+/* .nav-list {
   padding: 1.5em 0.5em 0.5em;
-  display: flex; /* To remove when implementing the hamburger menu */
+  display: flex; 
   justify-content: space-between;
   flex-wrap: wrap;
-}
+} */
 
 .nav-item {
   display: inline-block;
@@ -349,7 +353,7 @@ html {
   background: var(--secondary-color);
   color: var(--primary-color);
   grid-area: subtitle;
-  padding: 1.5em 1em 1em 1em;
+  padding: 1em 0.5em 0.5em 0.5em;
   border-radius: 3px;
 }
 
@@ -363,7 +367,7 @@ html {
 .profile-text {
   color: var(--primary-color);
   grid-area: text;
-  padding: 0.5em;
+  padding: 1em;
 }
 
 .about-grid {
@@ -649,8 +653,133 @@ html {
 .up a i {
   text-decoration: none;
   color: var(--primary-color);
+  padding: 0.5em;
 }
 
 /*************************************
 *********** End Footer ***************
 *************************************/
+
+/* Hamburger menu test begins */
+
+.nav-list a {
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  transition: all 0.2s ease-out;
+}
+
+.nav-list a:hover {
+  text-decoration: underline;
+}
+
+.nav-list {
+  background: var(--primary-color);
+  color: var(--text-color);
+  clear: both;
+  max-height: 0;
+  transition: max-height 0.2s ease-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-item {
+  font-weight: bold;
+}
+
+.menu-icon {
+  z-index: 20; /* To ensure it remains on top when menu opens up full height */
+  margin: 1em;
+  padding: 28px 20px;
+  position: relative;
+  float: right;
+  cursor: pointer;
+}
+
+.nav-icon {
+  background: var(--text-color);
+  display: block;
+  height: 2px;
+  width: 18px;
+  position: relative;
+  transition: background 0.2s ease-out;
+}
+
+.nav-icon:before {
+  background: var(--text-color);
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  top: 5px;
+}
+
+.nav-icon:after {
+  background-color: var(--text-color);
+  content: "";
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  top: -5px;
+}
+
+.menu-btn {
+  display: none;
+}
+
+/* Start of modified section */
+.menu-btn:checked ~ .nav .nav-list {
+  max-height: 100vh;
+  min-height: 100vh;
+}
+
+/* End of modified section */
+
+.menu-btn:checked ~ .menu-icon .nav-icon {
+  background: transparent;
+}
+
+.menu-btn:checked ~ .menu-icon .nav-icon::before {
+  transform: rotate(-45deg);
+  top: 0;
+}
+
+.menu-btn:checked ~ .menu-icon .nav-icon::after {
+  transform: rotate(45deg);
+  top: 0;
+}
+
+@media (min-width: 768px) {
+  /* .header li {
+    float: left;
+  } */
+
+  .nav-list li a {
+    padding: 20px 30px;
+  }
+
+  .nav-list {
+    clear: none; /*initially set to clear: both, thus pushing the menu below the left floated logo (mobile-first approach)*/
+    float: right;
+    max-height: none; /*initially toggled between 0 and 100vh */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: stretch;
+  }
+
+  .nav-list li:last-child {
+    margin-right: 1em;
+  }
+
+  .header .menu-icon {
+    display: none;
+  }
+}
+
+/* Hamburger menu test ends */
