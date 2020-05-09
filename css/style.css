@@ -344,14 +344,12 @@ html {
   background-color: var(--text-color);
 }
 
-.about h1 {
+.about-title {
   color: var(--primary-color);
   opacity: 1;
   font-weight: var(--fw-bolder);
-}
-
-.about-title {
   grid-area: title;
+  /* background: chocolate; */
 }
 
 .about-grid h4 {
@@ -363,6 +361,7 @@ html {
 }
 
 .profile-img {
+  /* background: red; */
   width: 200px;
   grid-area: img;
   position: relative;
@@ -376,6 +375,7 @@ html {
 }
 
 .about-grid {
+  /* background: chartreuse; */
   max-width: 860px;
   margin: auto;
   display: grid;
@@ -388,8 +388,7 @@ html {
 
 @media (min-width: 650px) {
   .about-grid {
-    grid-gap: 0.5em;
-    grid-template-rows: 70px auto auto auto;
+    grid-gap: 0 0.5em;
     grid-template-areas:
       "title img"
       "subtitle img"
@@ -403,6 +402,10 @@ html {
     width: calc(100% + 3em);
     padding-left: 3em;
     padding-right: calc(200px + 2em + 1em);
+  }
+
+  .profile-img {
+    padding-top: 4em;
   }
 }
 
