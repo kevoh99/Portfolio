@@ -685,10 +685,6 @@ html {
   align-items: center;
 }
 
-.nav-item {
-  font-weight: bold;
-}
-
 .menu-icon {
   z-index: 20; /* To ensure it remains on top when menu opens up full height */
   margin: 1em;
