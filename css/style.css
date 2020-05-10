@@ -310,9 +310,9 @@ html {
 
 .pg-down-link {
   position: absolute;
-  top: 95%;
+  top: 98%;
   left: 50%;
-  transform: translate(-50%, -95%);
+  transform: translate(-50%, -98%);
   color: var(--secondary-color);
 }
 
@@ -323,11 +323,12 @@ html {
 
 @media (min-width: 450px) {
   .nav-item + .nav-item {
-    margin-left: 2em;
+    margin-left: 1em;
   }
 
   .nav-list {
     justify-content: flex-end;
+    margin-right: 0.3em;
   }
 }
 
@@ -553,8 +554,8 @@ html {
 .contact-form input:focus,
 .contact-form select:focus,
 .contact-form textarea:focus {
-  outline: 3px solid var(--secondary-color);
-  outline-offset: 3px;
+  outline: none;
+  box-shadow: 0 0 0 2pt var(--secondary-color);
 }
 
 .contact-form input[type="submit"] {
@@ -584,6 +585,20 @@ html {
 .icon-text {
   font-family: var(--ff-primary);
   font-size: 1rem;
+}
+.social-media-item {
+  /* background: red; */
+  padding: 0.5em;
+}
+
+.profile-link {
+  /* background: chartreuse; */
+  display: inline-block;
+  padding: 0.5em;
+}
+
+.profile-link:focus {
+  outline: 3px solid var(--secondary-color);
 }
 
 .fa-mobile {
@@ -628,8 +643,8 @@ html {
   display: flex;
 }
 
-.up:focus,
-.up:hover {
+.up a:focus,
+.up a:hover {
   animation: pulse 1000ms infinite;
   outline: 0;
 }
@@ -662,17 +677,6 @@ html {
 
 /* Hamburger menu test begins */
 
-.nav-list a {
-  display: block;
-  padding: 20px;
-  text-decoration: none;
-  transition: all 0.2s ease-out;
-}
-
-.nav-list a:hover {
-  text-decoration: underline;
-}
-
 .nav-list {
   background: var(--primary-color);
   color: var(--text-color);
@@ -683,6 +687,17 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.nav-list a {
+  display: block;
+  padding: 20px;
+  text-decoration: none;
+  transition: all 0.2s ease-out;
+}
+
+.nav-list a:hover {
+  text-decoration: underline;
 }
 
 .menu-icon {
@@ -756,8 +771,9 @@ html {
     float: left;
   } */
 
-  .nav-list li a {
-    padding: 20px 30px;
+  .nav-list a {
+    padding: 10px 20px;
+    /* background: red; */
   }
 
   .nav-list {
@@ -767,8 +783,14 @@ html {
     flex-direction: row;
     justify-content: space-between;
     align-items: stretch;
+    /* background: chartreuse; */
+    margin-top: 0.3em;
+    padding: 0.3em;
   }
 
+  .nav-list li:first-child {
+    margin-left: 0.5em;
+  }
   .nav-list li:last-child {
     margin-right: 1em;
   }
